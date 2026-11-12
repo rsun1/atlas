@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>Atlas - LLM Execution Agent</title>
+      <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+      <div class="container">
+          <!-- left panel -->
+          <div class="panel left-panel">
+              <h2>New Task</h2>
+              <textarea id="goal-input" placeholder="Describe your goal..."></textarea>
+              <label>
+                  <input type="checkbox" id="auto-approve-toggle">
+                  Auto-approve (skip human review)
+              </label>
+              <button id="run-task-btn">Run Task</button>
+
+              <h3>Episodic Memory</h3>
+              <div id="memory-list"></div>
+          </div>
+
+          <!-- right panel, two pieces -->
+          <div class="right-column">
+              <div class="panel top-right-panel">
+                  <div id="active-goal">No active task</div>
+                  <div id="committee-status"></div>
+                  <div id="risk-score"></div>
+                  <ul id="task-steps"></ul>
+              </div>
+
+              <div class="panel bottom-right-panel">
+                  <h3>Activity Stream</h3>
+                  <div id="activity-log"></div>
+                  <h3>Final Report</h3>
+                  <div id="final-report"></div>
+              </div>
+          </div>
+      </div>
+
+      <script src="/static/app.js"></script>
+  </body>
+  </html>
