@@ -5,7 +5,8 @@ from atlas.app import audit, memory
 import asyncio
 import json 
 from fastapi.responses import StreamingResponse
-
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 
 app = FastAPI()
 
@@ -63,3 +64,8 @@ async def task_events(task_id: str):
         finally:
             ORCHESTRATOR.unsubscribe(task_id,q)
     return StreamingResponse(event_generator(), media_type="text/event-stream")
+
+app.mount("/static", StaticFiles(directory="atlas/static"), name="static")
+@app.get("/")
+def root():
+    return FileResponse("atlas/static/index.html")

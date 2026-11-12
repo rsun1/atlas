@@ -24,3 +24,7 @@ APPROVAL_THRESHOLD = int(os.environ.get("APPROVAL_THRESHOLD", "80"))
 MAX_STEP_RETRIES = int(os.environ.get("MAX_STEP_RETRIES","3"))
 CODE_TIMEOUT_SECONDS = int(os.environ.get("CODE_TIMEOUT_SECONDS","10"))
 
+
+ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY","")
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY","")

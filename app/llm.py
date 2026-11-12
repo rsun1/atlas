@@ -1,4 +1,4 @@
-from atlas.app.config import FORCE_DEMO
+from atlas.app.config import FORCE_DEMO, ANTHROPIC_API_KEY,GROQ_API_KEY,OPENAI_API_KEY
 import os 
 import json
 
@@ -11,11 +11,11 @@ def detect_provider():
     
     if FORCE_DEMO:
         _provider = "demo"
-    elif os.environ.get("ANTHROPIC_API_KEY"):
+    elif ANTHROPIC_API_KEY:
         _provider = "anthropic"
-    elif os.environ.get("GROQ_API_KEY"):
+    elif GROQ_API_KEY:
         _provider = "groq"
-    elif os.environ.get("OPENAI_API_KEY"):
+    elif OPENAI_API_KEY:
         _provider = "openai"
     else:
         _provider = "demo"

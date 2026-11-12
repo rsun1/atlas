@@ -27,7 +27,7 @@ class Orchestrator:
     
     def _set_status(self,task, status):
         task.status = status 
-        self._emit(task, "status_changed",None,f"Task status changed to {status}")
+        self._emit(task, "status_changed",None,f"Task status changed to {status.value}")
         
     def get(self, task_id):
         return self.tasks.get(task_id)
